@@ -1,4 +1,4 @@
-rule APT_name_desription
+rule APT_fack_shell_v2: indoxploit phpshell
 {
     meta:
         description = "Обф. версия - реверс в evernote"
@@ -9,10 +9,11 @@ rule APT_name_desription
         example = "<? $GLOBALS['_300318162_']=Array(base64_decode('ZXJyb' .'3Jfc' .'m' .'Vwb3J0aW5n'),base64_decode('c' .'2V0X' .'3' .'RpbWVfb' .'GltaXQ' .'='),base64_decode('bWQ' .'1')); ?>"
     strings:
         $php = /^\<\?/ ascii
-        $globals_array = /\$\[[0_]+\]\=Array\(/ ascii
+        $globals_array = /\$GLOBALS\[\'[\w]{5,}\'\]\=Array\(/ ascii
         $globals = "$GLOBALS[" nocase ascii
         $base64decode = "base64_decode(" nocase ascii
     condition:
-        //($php and $globals_array) or (#globals < 2 and #base64decode < 5)
-        all of them
+    //($php and $globals_array) or (#globals < 2 and #base64decode < 5)
+    all of them
+
 }
