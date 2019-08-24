@@ -1,4 +1,4 @@
-rule Malware_Var: phpshell
+rule Obfuscated_PHP_manyZeros: phpshell
 {
 
   meta:
@@ -26,5 +26,5 @@ rule MALWARE_PHP_SHELL_StrangeVar: phpshell
         $php = /^\<\?php/
         $debug = /\$[0O_]{10}\='1';/
     condition:
-        all of them 
+        all of them
 }

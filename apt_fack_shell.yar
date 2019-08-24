@@ -1,4 +1,4 @@
-rule APT_fack_shell: indoxploit phpshell
+rule APT_fack_shell_v1: indoxploit phpshell
 {
   meta:
       description = "[APT][IndoXploit][SHELL]"
