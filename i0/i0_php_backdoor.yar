@@ -1,7 +1,7 @@
-rule APT_i0_shell_backdoor: phpshell i0
+rule i0_php_backdoor: phpshell i0
 {
   meta:
-      description = "[APT][i0][SHELL]"
+      description = "i0 php backdoor"
       author = "delyee"
       date = "05.08.2019"
 

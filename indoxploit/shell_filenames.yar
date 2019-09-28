@@ -1,10 +1,10 @@
 // usage:
-// uweb -> sudo find /home/h* -type f -iname '*.php*' > ~/files.list && yara -s apt_fack_shell_names.yar ~/files.list
+// sudo find /home/h* -type f -iname '*.php*' > ~/files.list && yara -s apt_fack_shell_names.yar ~/files.list
 
 rule APT_fack_php_shell_names
 {
     meta:
-        description = "Все уникальные и пригодные для поиска имена 'fuck' шелла по результатам grep на logs13 за весь 2019 год"
+        description = "Все уникальные и пригодные для поиска имена за весь 2019 год"
         author = "delyee"
         date = "07.08.2019"
     strings:

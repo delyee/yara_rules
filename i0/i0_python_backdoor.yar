@@ -5,10 +5,10 @@ filename: dk.py
 */
 
 
-rule MALWARE_python_backdoor
+rule i0_python_backdoor: python backdoor phpshell i0
 {
   meta:
-      description = "[APT][i0][BACKDOOR]"
+      description = "i0 python backdoor"
       author = "delyee"
       date = "05.08.2019"
 
