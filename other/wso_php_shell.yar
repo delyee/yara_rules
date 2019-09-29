@@ -9,7 +9,7 @@ any of ($a,$b,$c)   любая из $a,$b или $c
 rule other_wso_php_shell: phpshell
 {
     meta:
-        description = "[][][]"
+        description = "default wso shell"
         author = "delyee"
         reference = "https://github.com/delyee/yara_rules"
         date = "29.09.2019"
