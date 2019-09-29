@@ -28,9 +28,9 @@ Time: 11257.514 sec (187 m 37 s)
 
 ### yara (total: 94)
 ```
-real    20m2.903s
-user    3m11.580s
-sys     3m33.945s
+real    25m21.543s
+user    2m44.678s
+sys     3m16.950s
 
 rules stats:
   [61] Generic_Eval

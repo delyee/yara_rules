@@ -1,11 +1,3 @@
-/*
-all of them         все строки внутри правила
-any of them         любая строка в правиле
-all of ($a*)        все строки чей идентификатор начинается с $a
-any of ($a,$b,$c)   любая из $a,$b или $c
-1 of ($*)           тоже самое что "any of them"
-*/
-
 rule other_wso_php_shell: phpshell
 {
     meta:

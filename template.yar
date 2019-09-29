@@ -6,12 +6,11 @@ any of ($a,$b,$c)   любая из $a,$b или $c
 1 of ($*)           тоже самое что "any of them"
 */
 
-rule APT_name_desription
+rule `python3 -c 'print(__import__("uuid").uuid4().hex)'`
 {
     meta:
-        description = "[][][]" // [MALWARE][PHP][SHELL] or [APT][FACK][SHELL]
+        description = ""
         author = "delyee"
-        reference = "" // url to github or blog post
         date = "05.08.2019"
         sha256sum = "" // sha256sum shell.php
     strings:
