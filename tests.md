@@ -13,7 +13,7 @@
 1625131
 ```
 
-### clamav
+### clamav (total: 72)
 ```
 ----------- SCAN SUMMARY -----------
 Known viruses: 6339198
@@ -26,9 +26,13 @@ Data read: 6687.89 MB (ratio 1.14:1)
 Time: 11257.514 sec (187 m 37 s)
 ```
 
-### yara
+### yara (total: 94)
 ```
-stats:
+real    20m2.903s
+user    3m11.580s
+sys     3m33.945s
+
+rules stats:
   [61] Generic_Eval
   [16] ZeroArray_Obfuscated
   [8]  i0_php_backdoor
