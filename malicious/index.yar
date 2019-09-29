@@ -1,0 +1,5 @@
+include "PHPLockit.yar"
+include "FOPO.yar"
+include "ZeroArray.yar"
+include "Generic_Eval.yar"
+include "Generic_v2.yar"
