@@ -1,3 +1,5 @@
+// данное правило существенно тормозит процесс сканирования, его нужно срочно переписать
+
 rule ZeroArray_Obfuscated: malicious obfuscated
 {
   meta:
