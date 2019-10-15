@@ -1,2 +1,5 @@
 include "wso_php_shell.yar"
 include "wso_php_shell_obfuscated_v1.yar"
+include "n318a65_phpshell.yar"
+include "oxycodone_phpshell.yar"
+include "getf_phpshell.yar"

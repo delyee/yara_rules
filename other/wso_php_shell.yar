@@ -1,3 +1,9 @@
+/*
+$auth_pass = "63a9f0ea7bb98050796b649e85481845";
+$color = "#df5";
+$default_action = 'FilesMan';
+*/
+
 rule other_wso_php_shell: phpshell
 {
     meta:
@@ -11,7 +17,9 @@ rule other_wso_php_shell: phpshell
         $s2 = "$default_action"
         $s3 = "WSO_VERSION"
         $s4 = "function wsoLogin() {"
-        $p1 = "if (!isset($_COOKIE[md5($_SERVER['HTTP_HOST'])]) || ($_COOKIE[md5($_SERVER['HTTP_HOST'])] != $auth_pass))"
+        $s5 = "if (!isset($_COOKIE[md5($_SERVER['HTTP_HOST'])]) || ($_COOKIE[md5($_SERVER['HTTP_HOST'])] != $auth_pass))"
+        $s6 = "$default_charset"
+        //$s7 = ""
     condition:
-        3 of ($s*) and $p1
+        3 of ($s*)
 }
