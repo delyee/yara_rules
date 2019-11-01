@@ -1,5 +1,5 @@
 include "./apts/index.yar"
-include "./malicious/index.yar"
+include "./Encoders/index.yar"
 include "./other/index.yar"
 include "./unknown/index.yar"
 include "./FalsePositive/index.yar"
