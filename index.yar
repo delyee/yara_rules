@@ -1,3 +1,13 @@
+/*
+global rule no1mb
+{
+  strings:
+
+  condition:
+
+}
+*/
+
 include "./apts/index.yar"
 include "./Encoders/index.yar"
 include "./other/index.yar"
