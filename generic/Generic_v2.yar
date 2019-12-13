@@ -11,6 +11,5 @@ rule Generic_v2: malicious obfuscated
         $g1 = "base64_decode"
         $globals = "$GLOBALS["
     condition:
-         #globals > 10 and (1 of s*) or $g1
-
+         #globals > 10 and (any of ($s*) or $g1)
 }
