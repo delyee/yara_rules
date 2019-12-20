@@ -1,18 +1,10 @@
-/*
-all of them         все строки внутри правила
-any of them         любая строка в правиле
-all of ($a*)        все строки чей идентификатор начинается с $a
-any of ($a,$b,$c)   любая из $a,$b или $c
-1 of ($*)           то же самое что "any of them"
-*/
-
-rule rulename: tag
+rule RSFirewall: FalsePositive
 {
     meta:
         description = "RSFirewall! 1.4.0"
         author = "delyee"
         date = "21.12.2019"
-        sha256sum = ""
+        sha256sum = "1e792d5bbb3834ee1aaef526ac0f9d28ffe7c5f9aff03b19ffbf1af76bd66911"
     strings:
         $ = "if (strpos($contents, 'eval(gzinflate(base64_decode') !== false)"
         $ = "@package RSFirewall!"
