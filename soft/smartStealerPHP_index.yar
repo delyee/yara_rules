@@ -1,12 +1,4 @@
-/*
-all of them         все строки внутри правила
-any of them         любая строка в правиле
-all of ($a*)        все строки чей идентификатор начинается с $a
-any of ($a,$b,$c)   любая из $a,$b или $c
-1 of ($*)           то же самое что "any of them"
-*/
-
-rule SmartStealerPHP_index: tr cnc
+rule SmartStealerPHP_index: soft cnc
 {
     meta:
         description = "smartStealerPHP - index.php"

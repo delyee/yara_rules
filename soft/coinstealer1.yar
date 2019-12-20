@@ -1,4 +1,4 @@
-rule CoinStealer: tr soft
+rule CoinStealer: soft cnc
 {
     meta:
         description = "CoinStealer v1.1 Bitcoin Stiller"
