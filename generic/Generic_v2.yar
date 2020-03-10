@@ -33,6 +33,7 @@ rule Generic_v2: malicious
 	$g13 = "str_rot13"
 	$g14 = "gzipinflate"
 	$g15 = "basename"
+	$g16 = "gzdecode"
 
     condition:
          any of ($s*) or 2 of ($g*)
