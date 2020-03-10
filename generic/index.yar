@@ -1,6 +1,7 @@
-include "Generic_Eval.yar"
-include "Generic_v2.yar"
-include "test_eval_evasion.yar"
+include "Generic.yar"
+
+//include "Generic_Eval.yar"
+//include "test_eval_evasion.yar"
 
 /*
 rule Long_Generic: malicious obfuscated
