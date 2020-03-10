@@ -36,5 +36,5 @@ rule Generic_v2: malicious
 	$g16 = "gzdecode"
 
     condition:
-         any of ($s*) or 2 of ($g*)
+         any of ($s*) and any of ($g*)
 }
