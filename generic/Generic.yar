@@ -1,3 +1,6 @@
+include "Generic_strings.yar"
+include "Generic_funcs.yar"
+
 rule Generic_v2: malicious
 {
     meta:
@@ -6,8 +9,8 @@ rule Generic_v2: malicious
         date = "28.09.2019"
     strings:
         $s1 = "$GLOBALS["
-        $s2 = "]=Array(base64_decode("
-        $s3 = "$_POST[\"to_address\"]"
+        $s2 = "]=Array"
+        $s3 = "$_POST"
 	$s4 = "FilesMan"
 	$s5 = "getDomainFromEmail"
 	$s6 = "back_connect"
@@ -36,5 +39,5 @@ rule Generic_v2: malicious
 	$g16 = "gzdecode"
 
     condition:
-         any of ($s*) and any of ($g*)
+         any of ($s*) and 2 of ($g*)
 }
