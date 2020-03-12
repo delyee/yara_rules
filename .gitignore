@@ -1,5 +1,3 @@
 
 .DS_Store
-dev/
-slowed/
-compile_all_rules.sh
+Ansible/

@@ -21,5 +21,5 @@ rule other_wso_php_shell: phpshell
         $s6 = "$default_charset"
         //$s7 = ""
     condition:
-        3 of ($s*)
+        all of them
 }
