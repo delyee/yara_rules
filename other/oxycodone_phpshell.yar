@@ -17,5 +17,5 @@ rule oxycodone_phpshell: phpshell
         $ = "eval(gzuncompress(base64_decode('eF6FVlGPmkAQ/it9aOJd0jQnelbS+OA9gCFXGm0KyzaNgUVDFDxzaE"
         $ = "eval(gzuncompress(base64_decode('eF61WG1vo0YQ/iuOhQI0BMyLAZ9LT1c1d/ch7Z1yab8kroXx2sbGgH"
     condition:
-        all of them
+        any of them
 }
