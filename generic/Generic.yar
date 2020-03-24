@@ -1,4 +1,4 @@
-include "Generic_strings.yar"
+//include "Generic_strings.yar"
 include "Generic_funcs.yar"
 
 rule Generic: malicious
@@ -8,5 +8,5 @@ rule Generic: malicious
         author = "delyee"
         date = "28.09.2019"
     condition:
-    	Generic_funcs and Generic_strings
+    	Generic_funcs //and Generic_strings
 }

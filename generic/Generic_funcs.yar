@@ -5,22 +5,22 @@ private rule Generic_funcs
         author = "delyee"
         date = "10.03.2020"
     strings:
-        $ = "base64_decode"
+        $base64_decode = "base64_decode" nocase
+        $eval = "eval" nocase
+        $ = "urldecode"
+        $ = "str_rot13"
 		$ = "chr"
-		$ = "eval"
 		$ = "strrev"
 		$ = "error_reporting"
 		$ = "ini_set"
-		$ = "urldecode"
 		$ = "gzinflate"
 		$ = "gzuncompress"
 		$ = "function_exists"
 		$ = "define"
 		$ = "stripslashes"
-		$ = "str_rot13"
 		$ = "gzipinflate"
 		$ = "basename"
 		$ = "gzdecode"
     condition:
-        2 of them
+    	$eval and ($base64_decode or 2 of them)
 }
