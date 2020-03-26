@@ -1,9 +1,8 @@
 /*
-global rule no1mb
+global rule filelimit
 {
-  strings:
-
-  condition:
+	condition:
+  		filesize < 2mb
 
 }
 */
