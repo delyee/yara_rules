@@ -89,4 +89,3 @@ rule Hex_Obfuscated: malicious obfuscated
     condition:
         Eval or Base64decode or Globals
 }
-*/
