@@ -1,4 +1,4 @@
-rule Generic: evil_funcs danger_funcs php_vars generic
+rule Generic: EvilFuncs DangerFuncs PHPVars generic
 {
     meta:
         description = "Неизвестная версия"
