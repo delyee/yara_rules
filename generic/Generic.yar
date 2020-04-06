@@ -1,21 +1,10 @@
-rule Generic: EvilFuncs DangerFuncs PHPVars generic
-{
-    meta:
-        description = "Неизвестная версия"
-        author = "delyee"
-        date = "28.09.2019"
-    condition:
-    	EvilFuncs or DangerFuncs and PHPVars
-}
-
-
 private rule EvilFuncs
 {
     strings:
         $ = "base64_decode" nocase
         $ = "eval" nocase
-	condition:
-    	any of them
+    condition:
+        any of them
 }
 
 private rule DangerFuncs
@@ -24,10 +13,10 @@ private rule DangerFuncs
         $ = "urldecode" nocase
         $ = "str_rot13" nocase
         $ = "error_reporting" nocase
-		$ = "chr" nocase
-		$ = "strrev" nocase
-	condition:
-    	any of them
+        $ = "chr" nocase
+        $ = "strrev" nocase
+    condition:
+        any of them
 }
 
 private rule PHPVars
@@ -45,6 +34,16 @@ private rule PHPVars
         $ = "$_COOKIE"
     condition:
          any of them
+}
+
+rule Generic: EvilFuncs DangerFuncs PHPVars generic
+{
+    meta:
+        description = "Неизвестная версия"
+        author = "delyee"
+        date = "28.09.2019"
+    condition:
+    	EvilFuncs or DangerFuncs and PHPVars
 }
 
 

@@ -10,3 +10,4 @@ rule DangerStrings: generic
         $ = "md5_brute"
     condition:
         any of them
+}
