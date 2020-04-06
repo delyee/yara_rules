@@ -1,4 +1,4 @@
-rule Nulled_HISTFILE: malicious ioc
+rule HISTFILE: ioc
 {
     meta:
         author = "delyee"

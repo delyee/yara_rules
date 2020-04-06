@@ -1,4 +1,4 @@
-rule htaccess_backdoor: malicious backdoor
+rule htaccess: generic ioc
 {
     meta:
         description = "Disguise PHP code in other extensions - .txt, .mp3/etc"
