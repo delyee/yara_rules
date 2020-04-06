@@ -5,11 +5,11 @@ rule Generic: evil_funcs danger_funcs php_vars generic
         author = "delyee"
         date = "28.09.2019"
     condition:
-    	evil_funcs or danger_funcs and php_vars
+    	EvilFuncs or DangerFuncs and PHPVars
 }
 
 
-private rule evil_funcs
+private rule EvilFuncs
 {
     strings:
         $ = "base64_decode" nocase
@@ -18,7 +18,7 @@ private rule evil_funcs
     	any of them
 }
 
-private rule danger_funcs
+private rule DangerFuncs
 {
     strings:
         $ = "urldecode" nocase
@@ -30,7 +30,7 @@ private rule danger_funcs
     	any of them
 }
 
-private rule php_vars
+private rule PHPVars
 {
     strings:
         $ = "$GLOBALS["

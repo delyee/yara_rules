@@ -1,4 +1,4 @@
-rule danger_strings: generic
+rule DangerStrings: generic
 {
     strings:
         $ = "getDomainFromEmail"
