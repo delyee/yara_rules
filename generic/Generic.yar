@@ -16,7 +16,7 @@ private rule evil_funcs
         $ = "eval" nocase
 	condition:
     	any of them
-
+}
 
 private rule danger_funcs
 {
@@ -28,6 +28,7 @@ private rule danger_funcs
 		$ = "strrev" nocase
 	condition:
     	any of them
+}
 
 private rule php_vars
 {
