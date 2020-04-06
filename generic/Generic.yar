@@ -1,8 +1,8 @@
 private rule EvilFuncs
 {
     strings:
-        $ = "base64_decode" nocase
-        $ = "eval" nocase
+        $ = "base64_decode(" nocase
+        $ = "eval(" nocase
     condition:
         any of them
 }
@@ -10,11 +10,11 @@ private rule EvilFuncs
 private rule DangerFuncs
 {
     strings:
-        $ = "urldecode" nocase
-        $ = "str_rot13" nocase
-        $ = "error_reporting" nocase
-        $ = "chr" nocase
-        $ = "strrev" nocase
+        $ = "urldecode(" nocase
+        $ = "str_rot13(" nocase
+        $ = "error_reporting(" nocase
+        $ = "chr(" nocase
+        $ = "strrev(" nocase
     condition:
         any of them
 }
