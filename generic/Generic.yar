@@ -1,50 +1,57 @@
-private rule EvilFuncs
+rule DefaultShell: generic
 {
     strings:
-        $ = "base64_decode(" nocase
-        $ = "eval(" nocase
+        $ = "eval(base64_decode(" nocase
     condition:
-        any of them
+        all of them
 }
 
-private rule DangerFuncs
-{
-    strings:
-        $ = "urldecode(" nocase
-        $ = "str_rot13(" nocase
-        $ = "error_reporting(" nocase
-        $ = "chr(" nocase
-        $ = "strrev(" nocase
-    condition:
-        any of them
-}
+// private rule EvilFuncs
+// {
+//     strings:
+//         $ = "base64_decode(" nocase
+//         $ = "eval(" nocase
+//     condition:
+//         any of them
+// }
 
-private rule PHPVars
-{
-    strings:
-        $ = "$GLOBALS["
-        $ = "]=Array"
-        $ = "$_POST"
-        $ = "$_GET"
-        $ = "$_SESSION"
-        $ = "$_SERVER"
-        $ = "$_REQUEST"
-        $ = "$_FILES"
-        $ = "$_ENV"
-        $ = "$_COOKIE"
-    condition:
-         any of them
-}
+// rule DangerFuncs: generic
+// {
+//     strings:
+//         $ = "str_rot13(" nocase
+//         $ = "error_reporting(" nocase
+//         $ = "chr(" nocase
+//         $ = "strrev(" nocase
+//     condition:
+//         EvilFuncs and 2 of them
+// }
 
-rule Generic: EvilFuncs DangerFuncs PHPVars generic
-{
-    meta:
-        description = "Неизвестная версия"
-        author = "delyee"
-        date = "28.09.2019"
-    condition:
-    	EvilFuncs or DangerFuncs and PHPVars
-}
+// private rule PHPVars
+// {
+//     strings:
+//         $ = "$GLOBALS["
+//         $ = "]=Array"
+//         $ = "$_POST"
+//         $ = "$_GET"
+//         $ = "$_SESSION"
+//         $ = "$_SERVER"
+//         $ = "$_REQUEST"
+//         $ = "$_FILES"
+//         $ = "$_ENV"
+//         $ = "$_COOKIE"
+//     condition:
+//          any of them
+// }
+
+// rule Generic: EvilFuncs DangerFuncs PHPVars generic
+// {
+//     meta:
+//         description = "Неизвестная версия"
+//         author = "delyee"
+//         date = "28.09.2019"
+//     condition:
+//     	DefaultShell or DangerFuncs //and PHPVars
+// }
 
 
 /* 
