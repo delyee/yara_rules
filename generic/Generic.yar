@@ -6,25 +6,26 @@ rule DefaultShell: generic
         all of them
 }
 
-// private rule EvilFuncs
-// {
-//     strings:
-//         $ = "base64_decode(" nocase
-//         $ = "eval(" nocase
-//     condition:
-//         any of them
-// }
+private rule EvilFuncs
+ {
+     strings:
+         $ = "base64_decode(" nocase
+         $ = "eval(" nocase
+     condition:
+         any of them
+ }
 
-// rule DangerFuncs: generic
-// {
-//     strings:
-//         $ = "str_rot13(" nocase
-//         $ = "error_reporting(" nocase
-//         $ = "chr(" nocase
-//         $ = "strrev(" nocase
-//     condition:
-//         EvilFuncs and 2 of them
-// }
+rule DangerFuncs: generic
+ {
+     strings:
+         $ = "str_rot13(" nocase
+         $ = "error_reporting(" nocase
+         $ = "chr(" nocase
+         $ = "strrev(" nocase
+         $ = "preg_replace(" nocase
+     condition:
+         EvilFuncs and any of them
+ }
 
 // private rule PHPVars
 // {

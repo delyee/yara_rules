@@ -1,5 +1,6 @@
 include "Generic.yar"
-include "danger_strings.yar"
+include "More_chars.yar"
+//include "danger_strings.yar"
 //include "Generic_Eval.yar"
 //include "test_eval_evasion.yar"
 
