@@ -31,7 +31,7 @@ rule MoreSpaces: generic malicious
         author = "delyee"
         date = "12.04.2020"
     strings:
-        $spaces = { 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [20-] 20 20 20 20 }
+        $spaces = { 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [20-] 20 20 20 20 }
     condition:
         $spaces and not LineFeed_and_MoreSpaces_and_Tab
 }
@@ -53,7 +53,7 @@ rule MoreTabs: generic malicious
         author = "delyee"
         date = "12.04.2020"
     strings:
-        $tabs = { 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 [20-] 09 09 09 09 }
+        $tabs = { 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 [20-] 09 09 09 09 }
     condition:
         $tabs and not LineFeed_and_MoreTabs
 }
