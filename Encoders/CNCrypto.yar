@@ -1,4 +1,9 @@
 // idiot: warning: $e2 in rule CNCrypto_Obfuscated is slowing down scanning
+/* results: 
+real  0m5.945s
+user  0m37.672s
+sys 0m2.108s
+*/
 
 rule CNCrypto_Obfuscated: malicious obfuscated
 {
@@ -13,5 +18,5 @@ rule CNCrypto_Obfuscated: malicious obfuscated
       $s1 = "eval(base64_decode("
       $s2 = "Encrypted by CNCrypto"
   condition:
-      ($s1 and $s2) and ($e1 and #e2 == 2) or ($s1 and $s2)
+      $s2 and ($e1 and #e2 == 2) or ($s1 and $s2)
 }

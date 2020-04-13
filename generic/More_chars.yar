@@ -13,6 +13,8 @@ Example: ("0x20"*320)
 0x09 - Horizontal Tab
 */
 
+/* More_chars.yar(23): warning: $n_morespace_tab is slowing down scanning (critical!)
+
 rule LineFeed_MoreSpaces_Tab: generic malicious morespaces
 {
     meta:
@@ -20,10 +22,11 @@ rule LineFeed_MoreSpaces_Tab: generic malicious morespaces
         author = "delyee"
         date = "12.04.2020"
     strings:
-        $n_morespace_tab = { 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [50-600] 20 20 20 20 20 20 20 20 09 }
+        $n_morespace_tab = { 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [50-600] 20 20 20 20 09 }
     condition:
         $n_morespace_tab
 }
+*/
 
 rule CodeInjection: generic malicious inj morespaces
 {
