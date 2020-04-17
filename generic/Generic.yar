@@ -23,6 +23,8 @@ rule DangerFuncs: generic
          $ = "chr(" nocase
          $ = "strrev(" nocase
          $ = "preg_replace(" nocase
+         $ = "assert(" nocase
+         $ = "stripslashes(" nocase
      condition:
          EvilFuncs and any of them
  }
