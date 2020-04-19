@@ -5,7 +5,7 @@ user  0m37.672s
 sys 0m2.108s
 */
 
-rule CNCrypto_Obfuscated: malicious obfuscated
+rule CNCrypto: Encoders obfuscated malicious
 {
   meta:
       description = "http://www.cn-software.com/en/cncrypto/"

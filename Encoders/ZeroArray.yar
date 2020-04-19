@@ -1,6 +1,6 @@
 // данное правило существенно тормозит процесс сканирования, его нужно срочно переписать
 
-rule ZeroArray_Obfuscated: malicious obfuscated
+rule ZeroArray: Encoders obfuscated malicious 
 {
   meta:
       description = "Детект обф. переменных следующего вида - '$0O00_0O'"

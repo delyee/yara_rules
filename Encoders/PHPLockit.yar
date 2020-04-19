@@ -1,4 +1,4 @@
-rule PHPLockit_Obfuscated: malicious obfuscated
+rule PHPLockit: Encoders obfuscated
 {
     meta:
         description = "Obfuscation with PHPLockit"

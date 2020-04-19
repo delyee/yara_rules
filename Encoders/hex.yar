@@ -74,7 +74,7 @@ private rule Base64decode
 }
 
 
-rule Hex_Obfuscated: malicious obfuscated
+rule Hex: Encoders obfuscated globals eval base64decode
 {
     meta:
         description = "hex encoded"

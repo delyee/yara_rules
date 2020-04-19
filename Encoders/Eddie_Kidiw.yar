@@ -1,4 +1,4 @@
-rule EddieKidiw_Obfuscated: malicious obfuscated
+rule EddieKidiw: Encoders obfuscated malicious 
 {
     meta:
         description = "Obfuscator by Eddie Kidiw, indoxploit/indosec"
