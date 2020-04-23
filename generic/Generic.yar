@@ -7,6 +7,24 @@ private rule EvilFuncs
          all of them
  }
 
+
+private rule Vars
+{
+    strings:
+        $ = "$GLOBALS["
+        $ = "]=Array"
+        $ = "$_POST"
+        $ = "$_GET"
+        $ = "$_SESSION"
+        $ = "$_SERVER"
+        $ = "$_REQUEST"
+        $ = "$_FILES"
+        $ = "$_ENV"
+        $ = "$_COOKIE"
+    condition:
+         any of them
+}
+
 rule DangerFuncs: generic
  {
      strings:
@@ -21,25 +39,12 @@ rule DangerFuncs: generic
          $ = "function_exists(" nocase 
          $ = "stripslashes(" nocase
      condition:
-         EvilFuncs and 2 of them
+         EvilFuncs and 2 of them and Vars
  }
 
-// private rule PHPVars
-// {
-//     strings:
-//         $ = "$GLOBALS["
-//         $ = "]=Array"
-//         $ = "$_POST"
-//         $ = "$_GET"
-//         $ = "$_SESSION"
-//         $ = "$_SERVER"
-//         $ = "$_REQUEST"
-//         $ = "$_FILES"
-//         $ = "$_ENV"
-//         $ = "$_COOKIE"
-//     condition:
-//          any of them
-// }
+
+
+
 
 // rule Generic: EvilFuncs DangerFuncs PHPVars generic
 // {
