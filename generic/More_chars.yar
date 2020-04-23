@@ -15,20 +15,10 @@ Example: ("0x20"*320)
 
 /* More_chars.yar(23): warning: $n_morespace_tab is slowing down scanning (critical!)
 
-rule LineFeed_MoreSpaces_Tab: generic malicious morespaces
-{
-    meta:
-        description = "see example"
-        author = "delyee"
-        date = "12.04.2020"
-    strings:
-        $n_morespace_tab = { 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [50-600] 20 20 20 20 09 }
-    condition:
-        $n_morespace_tab
-}
+
 */
 
-rule CodeInjection: generic malicious inj morespaces
+rule CodeInjection: generic malicious morespaces inj
 {
     meta:
         author = "delyee"
@@ -43,7 +33,7 @@ rule CodeInjection: generic malicious inj morespaces
         $inj
 }
 
-rule LineFeed_MoreTabs: generic malicious moretabs
+rule LineFeed_MoreTabs: generic malicious moretabs inj
 {
     meta:
         author = "delyee"
@@ -57,14 +47,26 @@ rule LineFeed_MoreTabs: generic malicious moretabs
         $pattern
 }
 
-rule MoreTabs: generic malicious
+rule LineFeed_MoreSpaces_Tab: generic malicious morespaces inj
+{
+    meta:
+        description = "see example"
+        author = "delyee"
+        date = "12.04.2020"
+    strings:
+        $n_morespace_tab = { 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [50-600] 20 20 20 20 09 }
+    condition:
+        $n_morespace_tab and not CodeInjection
+}
+
+rule MoreTabs: generic moretabs inj
 {
     meta:
         author = "delyee"
         date = "12.04.2020"
     strings:
         // $tabs = { 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 [50-600] 09 09 09 09 }
-        $tabs = { 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 [50-600] 09 09 09 09 }
+        $tabs = { 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 09 [50-600] 09 09 09 09 }
     condition:
         $tabs and not LineFeed_MoreTabs
 }

@@ -1,18 +1,10 @@
-rule DefaultShell: generic
-{
-    strings:
-        $ = "eval(base64_decode(" nocase
-    condition:
-        all of them
-}
-
 private rule EvilFuncs
  {
      strings:
          $ = "base64_decode(" nocase
          $ = "eval(" nocase
      condition:
-         any of them
+         all of them
  }
 
 rule DangerFuncs: generic

@@ -1,8 +1,9 @@
 include "Generic.yar"
 include "More_chars.yar"
+include "default_shell.yar"
 //include "danger_strings.yar"
 //include "Generic_Eval.yar"
-//include "test_eval_evasion.yar"
+include "test_eval_evasion.yar"
 
 /*
 rule Long_Generic: malicious obfuscated

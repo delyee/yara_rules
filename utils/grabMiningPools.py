@@ -1,4 +1,5 @@
 from requests import get as rget
+from time import time
 
 headers = {
 	'authority': 'data.miningpoolstats.stream',
@@ -13,27 +14,7 @@ headers = {
 }
 
 
-links = [
-	'https://data.miningpoolstats.stream/data/monero.js?t=1587210437'
-]
+link = 'https://data.miningpoolstats.stream/data/monero.js?t=1587210437'
 
-
-for link in links:
-	r = rget(link, headers=headers).json()
-	for i in r.get('data'):
-		mda = i.get('pool_id')
-		if mda:
-			print(mda)
-
-'''
-for link in links:
-	for line in str(rget(link, headers=headers).content).split('<b>'):
-		print(line)
-'''
-
-'''
-for link in links:
-	for line in str(rget(link).content).split('<b>'):
-		if 'onclick="gaSendEvent(\'pool-click\'' in line:
-			print(line.split('>')[1])
-'''
+for line in rget(link, headers=headers).json().get('data'):
+	if line.get('pool_id'): print(line.get('pool_id'))

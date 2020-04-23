@@ -1,4 +1,4 @@
-rule FOPO_Obfuscated: Encoders obfuscated
+rule FOPO: Encoders obfuscated
 {
     meta:
         description = "FOPO - Free Online PHP Obfuscator"
