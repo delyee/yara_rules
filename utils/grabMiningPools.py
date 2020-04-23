@@ -1,5 +1,4 @@
 from requests import get as rget
-from time import time
 
 headers = {
 	'authority': 'data.miningpoolstats.stream',
@@ -17,4 +16,5 @@ headers = {
 link = 'https://data.miningpoolstats.stream/data/monero.js?t=1587210437'
 
 for line in rget(link, headers=headers).json().get('data'):
-	if line.get('pool_id'): print(line.get('pool_id'))
+	if line.get('pool_id'): print('$ = "{}" ascii fullword'.format(line.get('pool_id')))
+

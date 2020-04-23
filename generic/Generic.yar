@@ -17,8 +17,11 @@ rule DangerFuncs: generic
          $ = "preg_replace(" nocase
          $ = "assert(" nocase
          $ = "stripslashes(" nocase
+         $ = "ini_set(" nocase
+         $ = "function_exists(" nocase 
+         $ = "stripslashes(" nocase
      condition:
-         EvilFuncs and any of them
+         EvilFuncs and 2 of them
  }
 
 // private rule PHPVars
@@ -45,7 +48,7 @@ rule DangerFuncs: generic
 //         author = "delyee"
 //         date = "28.09.2019"
 //     condition:
-//     	DefaultShell or DangerFuncs //and PHPVars
+//      DefaultShell or DangerFuncs //and PHPVars
 // }
 
 
@@ -57,16 +60,14 @@ private rule other_funcs
         author = "delyee"
         date = "10.03.2020"
     strings:
-        $ = "ini_set"
-		$ = "gzinflate"
-		$ = "gzuncompress"
-		$ = "function_exists"
-		$ = "define"
-		$ = "stripslashes"
-		$ = "gzipinflate"
-		$ = "basename"
-		$ = "gzdecode"
-	condition:
-    	any of them
+        $ = "gzinflate"
+        $ = "gzuncompress"
+        $ = "define"
+        $ = "stripslashes"
+        $ = "gzipinflate"
+        $ = "basename"
+        $ = "gzdecode"
+    condition:
+        any of them
 */
-		
+        
