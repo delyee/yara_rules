@@ -59,6 +59,7 @@ rule LineFeed_MoreSpaces_Tab: generic malicious morespaces inj
         $n_morespace_tab and not CodeInjection
 }
 
+/*
 rule MoreTabs: generic moretabs inj
 {
     meta:
@@ -70,3 +71,4 @@ rule MoreTabs: generic moretabs inj
     condition:
         $tabs and not LineFeed_MoreTabs
 }
+*/
