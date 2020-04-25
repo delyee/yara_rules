@@ -1,3 +1,8 @@
+// eval/*t885*/(
+// eval/*b01e589*/(
+// eval/* = 65 76 61 6c 2f 2a
+// */( = 2a 2f 28
+
 rule test_eval_evasion: test
 {
     meta:
@@ -5,7 +10,8 @@ rule test_eval_evasion: test
         author = "delyee"
         date = "14.12.2019"
     strings:
-        $ = "eval/**/" nocase
+        //$str = "eval/**/" nocase
+        $hex = { 65 76 61 6c 2f 2a [0-20] 2a 2f 28 }
     condition:
-        all of them
+        $hex
 }

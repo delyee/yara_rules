@@ -47,6 +47,7 @@ rule LineFeed_MoreTabs: generic malicious moretabs inj
         $pattern
 }
 
+/*
 rule LineFeed_MoreSpaces_Tab: generic malicious morespaces inj
 {
     meta:
@@ -54,12 +55,12 @@ rule LineFeed_MoreSpaces_Tab: generic malicious morespaces inj
         author = "delyee"
         date = "12.04.2020"
     strings:
-        $n_morespace_tab = { 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [50-600] 20 20 20 20 09 }
+        $n_morespace_tab = { 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 [50-600] 20 20 20 20 09 }
     condition:
         $n_morespace_tab and not CodeInjection
 }
 
-/*
+
 rule MoreTabs: generic moretabs inj
 {
     meta:
