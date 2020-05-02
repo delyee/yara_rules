@@ -1,1 +1,1 @@
-## fair use
+fair use
