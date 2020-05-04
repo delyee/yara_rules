@@ -45,6 +45,20 @@ rule LineFeed_MoreTabs: generic malicious moretabs inj
         $pattern
 }
 
+rule LineFeed: generic malicious inj
+{
+    meta:
+        author = "delyee"
+        date = "04.05.2020"
+    strings:
+        $ = { 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A }
+    condition:
+        all of them
+}
+
+// 19
+// 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a
+
 /*
 rule LineFeed_MoreSpaces_Tab: generic malicious morespaces inj
 {
