@@ -17,10 +17,11 @@ rule LineFeed: generic malicious inj
         author = "delyee"
         date = "04.05.2020"
     strings:
-        $ = { (3c 3f | 3f 3e) }
+        $ = { 3c 3f }
+        $ = { 3f 3e }
         $ = { 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A }
     condition:
-        all of them
+        all of them and not uint16(0) == 0x1F8B
 }
 
 // 19
