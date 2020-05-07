@@ -19,7 +19,6 @@ rule MiningPools: mining
         $ = ".monero.org" ascii fullword
         $ = ".poolto.be" ascii fullword
         $ = "dwarfpool.com" ascii fullword
-
         $ = "2miners.com" ascii fullword
         $ = "antpool.com" ascii fullword
         $ = "bohemianpool.com" ascii fullword
@@ -83,19 +82,6 @@ rule MiningPools: mining
         any of them
 }
 
-
-rule MinersOptions: mining
-{
-    meta:
-        description = ""
-        author = "delyee"
-        date = "18.04.2020"
-    strings:
-        $ = "--donate-level" ascii
-        $ = "--nicehash" ascii
-    condition:
-        any of them
-}
 
 rule MinersStings: mining
 {
