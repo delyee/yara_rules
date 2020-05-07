@@ -21,7 +21,7 @@ rule LineFeed: generic malicious inj
         $ = { 3f 3e }
         $ = { 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A }
     condition:
-        all of them and not uint16(0) == 0x1F8B
+        all of them //and not uint16(0) == 0xFFD8
 }
 
 // 19
