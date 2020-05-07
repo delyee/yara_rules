@@ -1,5 +1,3 @@
-include "../Encoders/hex.yar"
-
 rule globals_file_get_contents: phpshell hex
 {
     meta:
