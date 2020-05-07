@@ -11,7 +11,7 @@
 // }
 
 
-rule setup_moneroocean_miner: bash mining xmrig md5
+rule setup_moneroocean_miner: bash mining xmrig
 {
     meta:
         description = "https://github.com/MoneroOcean/xmrig_setup"
@@ -29,7 +29,7 @@ rule setup_moneroocean_miner: bash mining xmrig md5
 }
 
 
-rule uninstall_moneroocean_miner: bash mining xmrig md5
+rule uninstall_moneroocean_miner: bash mining xmrig
 {
     meta:
         description = "https://github.com/MoneroOcean/xmrig_setup"
@@ -43,4 +43,20 @@ rule uninstall_moneroocean_miner: bash mining xmrig md5
         $s4 = "sudo systemctl daemon-reload"
     condition:
         $default and any of ($s*) // or hash.md5(0, filesize) == "b059718f365d30a559afacf2d86bc379"
+}
+
+rule moneroocean_miner_service: mining xmrig
+{
+    meta:
+        description = "https://github.com/MoneroOcean/xmrig_setup"
+        author = "delyee"
+        date = "07.05.2020"
+    strings:
+        $default1 = "ExecStart="
+        $default2 = "[Unit]"
+        $s1 = "--config="
+        $s2 = "moneroocean"
+        $s3 = ".json"
+    condition:
+        all of them
 }
