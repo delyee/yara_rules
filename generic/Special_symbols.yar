@@ -18,7 +18,7 @@ rule LineFeed: generic malicious inj
         date = "04.05.2020"
     strings:
         $ = { 3c 3f }
-        $ = { 3f 3e }
+        $ = { 65 76 61 6c (28 | 2f 2a)}
         $ = { 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A }
     condition:
         all of them //and not uint16(0) == 0xFFD8

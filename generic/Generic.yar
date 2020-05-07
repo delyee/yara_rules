@@ -1,8 +1,8 @@
 private rule EvilFuncs
  {
      strings:
-         $ = "base64_decode(" nocase
-         $ = "eval(" nocase
+         $ = "base64_decode" nocase fullword
+         $ = "eval" nocase fullword
      condition:
          all of them
  }
@@ -28,16 +28,16 @@ private rule Vars
 rule DangerFuncs: generic
  {
      strings:
-         $ = "str_rot13(" nocase
-         $ = "error_reporting(" nocase
-         $ = "chr(" nocase
-         $ = "strrev(" nocase
-         $ = "preg_replace(" nocase
-         $ = "assert(" nocase
-         $ = "stripslashes(" nocase
-         $ = "ini_set(" nocase
-         $ = "function_exists(" nocase 
-         $ = "stripslashes(" nocase
+         $ = "str_rot13" nocase fullword
+         $ = "error_reporting" nocase fullword
+         $ = "chr" nocase fullword
+         $ = "strrev" nocase fullword
+         $ = "preg_replace(" nocase fullword
+         $ = "assert" nocase fullword
+         $ = "stripslashes" nocase fullword
+         $ = "ini_set" nocase fullword
+         $ = "function_exists" nocase fullword
+         $ = "stripslashes" nocase fullword
      condition:
          EvilFuncs and 2 of them and Vars
  }

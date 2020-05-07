@@ -11,7 +11,7 @@ rule test_eval_evasion: test
         date = "14.12.2019"
     strings:
         //$str = "eval/**/" nocase
-        $hex = { 65 76 61 6c 2f 2a [0-20] 2a 2f 28 }
+        $hex = { 65 76 61 6c 2f 2a [0-50] 2a 2f 28 }
     condition:
         $hex
 }
