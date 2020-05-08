@@ -36,13 +36,14 @@ rule uninstall_moneroocean_miner: bash mining xmrig
         author = "delyee"
         date = "07.05.2020"
     strings:
-        $default = "MoneroOcean mining uninstall script"
+        $default1 = "moneroocean"
+        $default2 = "mining uninstall script"
         $s1 = "sudo systemctl stop"
         $s2 = "sudo systemctl disable"
         $s3 = "rm -f /etc/systemd/system/"
         $s4 = "sudo systemctl daemon-reload"
     condition:
-        $default and any of ($s*) // or hash.md5(0, filesize) == "b059718f365d30a559afacf2d86bc379"
+        ($default1 or $default2) and any of ($s*) // or hash.md5(0, filesize) == "b059718f365d30a559afacf2d86bc379"
 }
 
 rule moneroocean_miner_service: mining xmrig
@@ -53,10 +54,10 @@ rule moneroocean_miner_service: mining xmrig
         date = "07.05.2020"
     strings:
         $default1 = "ExecStart="
-        $default2 = "[Unit]"
+        $default2 = "moneroocean"
         $s1 = "--config="
-        $s2 = "moneroocean"
+        $s2 = "[Unit]"
         $s3 = ".json"
     condition:
-        all of them
+        ($default1 or $default2) and any of ($s*)
 }

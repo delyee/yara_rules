@@ -17,11 +17,11 @@ rule LineFeed: generic malicious inj
         author = "delyee"
         date = "04.05.2020"
     strings:
-        $ = { 3c 3f }
-        $ = { 65 76 61 6c (28 | 2f 2a)}
-        $ = { 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A }
+        $h1 = { 3c 3f }
+        $h2 = { 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A }
+        $eval = { 65 76 61 6c (28 | 2f 2a) }
     condition:
-        all of them //and not uint16(0) == 0xFFD8
+        all of ($h*) and ($eval or Hex) //and not uint16(0) == 0xFFD8
 }
 
 // 19
