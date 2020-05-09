@@ -13,5 +13,5 @@ rule globals_array_global: inj
         $eval = { 65 76 61 6c 28 }
         
     condition:
-        all of ($h*) and ($eval_escaping or $eval)
+        all of ($h*) and ($eval_escaping or $eval) and not IsELF
 }
