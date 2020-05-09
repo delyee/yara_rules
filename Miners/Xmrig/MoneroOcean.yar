@@ -64,9 +64,8 @@ rule moneroocean_miner_service: mining xmrig
     strings:
         $default1 = "ExecStart="
         $default2 = "moneroocean"
-        $s1 = "--config="
+        $s1 = "[Service]"
         $s2 = "[Unit]"
-        $s3 = ".json"
     condition:
-        ($default1 or $default2) and any of ($s*)
+        all of ($default*) and any of ($s*)
 }

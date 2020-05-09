@@ -11,6 +11,7 @@ rule LineFeed_MoreTabs: generic malicious moretabs inj
         $pattern
 }
 
+/*
 rule LineFeed: generic malicious inj
 {
     meta:
@@ -21,9 +22,9 @@ rule LineFeed: generic malicious inj
         $h2 = { 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A }
         $eval = { 65 76 61 6c (28 | 2f 2a) }
     condition:
-        all of ($h*) and ($eval or Hex) //and not uint16(0) == 0xFFD8
+        all of ($h*) and ($eval or Hex) and not IsELF and IsPHP //and not uint16(0) == 0xFFD8
 }
-
+*/
 // 19
 // 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a 0a
 

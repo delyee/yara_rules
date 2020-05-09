@@ -1,11 +1,3 @@
-private rule IsPHP
- {
-     strings:
-         $ = "<?" nocase fullword
-     condition:
-         all of them
- }
-
 private rule EvilFuncs
  {
      strings:
@@ -47,7 +39,7 @@ rule DangerFuncs: generic
          $ = "function_exists" nocase fullword
          $ = "stripslashes" nocase fullword
      condition:
-         IsPHP and EvilFuncs and 2 of them and Vars
+         IsPHP and EvilFuncs and 2 of them and Vars and not IsELF
  }
 
 

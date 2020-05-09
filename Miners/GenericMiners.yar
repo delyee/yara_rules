@@ -81,8 +81,8 @@ rule MiningPools: mining generic
 }
 
 
-
-rule MinersStings: mining generic
+/*
+rule MinersStrings: mining generic
 {
     meta:
         description = ""
@@ -95,6 +95,6 @@ rule MinersStings: mining generic
         $ = "stratum+tcp" ascii
         $ = "stratum+udp" ascii
     condition:
-        any of them
+        any of them and IsELF
 }
-
+*/
