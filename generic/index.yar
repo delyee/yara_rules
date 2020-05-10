@@ -1,4 +1,4 @@
-include "Generic.yar"
+//include "Generic.yar"
 include "default_shell.yar"
 //include "danger_strings.yar"
 //include "Generic_Eval.yar"
