@@ -5,12 +5,12 @@ rule XmrigCnrigOptions: mining xmrig cnrig
         author = "delyee"
         date = "18.04.2020"
     strings:
-        $s1 = "--donate-level" ascii
-        $s2 = "--nicehash" ascii
-        $s3 = "--algo" ascii
-        $s4 = "--threads" ascii
-        $s5 = "--cpu-max-threads-hint" ascii
-        $default = "xmrig" ascii fullword
+        $ = "--donate-level" ascii
+        $ = "--nicehash" ascii
+        $ = "--algo" ascii
+        $ = "--threads" ascii
+        $ = "--cpu-max-threads-hint" ascii
+        $ = "xmrig" ascii fullword
     condition:
-        3 of ($s*)
+        3 of them
 }
