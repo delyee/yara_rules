@@ -1,4 +1,4 @@
-rule XmrigOptions: mining xmrig
+rule XmrigCnrigOptions: mining xmrig cnrig
 {
     meta:
         description = "cli options"
@@ -12,5 +12,5 @@ rule XmrigOptions: mining xmrig
         $s5 = "--cpu-max-threads-hint" ascii
         $default = "xmrig" ascii fullword
     condition:
-        $default and 2 of ($s*)
+        3 of ($s*)
 }
