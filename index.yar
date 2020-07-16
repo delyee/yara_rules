@@ -20,9 +20,17 @@ global rule zipFile
 }
 
 */
-//include "./FalsePositive/index.yar"
 //include "./ioc/index.yar"
 
+/*
+include "./FalsePositive/index.yar"
+
+global rule NotFalsePositive
+{
+    condition:
+        not FalsePositive_*
+}
+*/
 include "./Custom/index.yar"
 include "./generic/index.yar"
 include "./apts/index.yar"
