@@ -11,6 +11,17 @@ rule LineFeed_MoreTabs: generic malicious moretabs inj
         $pattern
 }
 
+rule MoreSpaces: generic malicious inj
+{
+    meta:
+        author = "delyee"
+        date = "07.08.2020"
+    strings:
+        $pattern = { (3c 3f 70 68 70 | 3c 3f) 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 }
+    condition:
+        $pattern
+}
+
 /*
 rule LineFeed: generic malicious inj
 {
