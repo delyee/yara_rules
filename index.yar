@@ -31,11 +31,17 @@ global rule NotFalsePositive
         not FalsePositive_*
 }
 */
-include "./Custom/index.yar"
-include "./generic/index.yar"
-include "./apts/index.yar"
+
+
+//include "./Custom/index.yar"
+
+
 include "./Encoders/index.yar"
 include "./other/index.yar"
 include "./unknown/index.yar"
 include "./soft/index.yar"
 include "./Miners/index.yar"
+include "./CheckVulnerable/index.yar"
+include "./generic/index.yar"
+include "./apts/index.yar"
+

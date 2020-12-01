@@ -1,6 +1,6 @@
-//include "Generic.yar"
+include "Generic.yar"
 include "default_shell.yar"
-//include "danger_strings.yar"
+include "danger_strings.yar"
 //include "Generic_Eval.yar"
 include "test_eval_evasion.yar"
 include "CodeInjection.yar"

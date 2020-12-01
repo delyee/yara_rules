@@ -3,8 +3,9 @@ private rule EvilFuncs
      strings:
          $ = "base64_decode" nocase fullword
          $ = "eval" nocase fullword
+         $ = { 69 6e 63 6c 75 64 65 20 27 68 74 74 (70 | 70 73) 3a 2f 2f } 
      condition:
-         all of them
+         any of them
  }
 
 
@@ -25,7 +26,7 @@ private rule Vars
          any of them
 }
 
-rule DangerFuncs: generic
+private rule DangerFuncs: generic
  {
      strings:
          $ = "str_rot13" nocase fullword
@@ -39,23 +40,13 @@ rule DangerFuncs: generic
          $ = "function_exists" nocase fullword
          $ = "stripslashes" nocase fullword
      condition:
-         IsPHP and EvilFuncs and 2 of them and Vars and not IsELF
+         //not IsELF and 
+         //(IsPHP and EvilFuncs) or (any of them and Vars)
+         any of them
  }
 
 
-// rule Generic: EvilFuncs DangerFuncs PHPVars generic
-// {
-//     meta:
-//         description = "Неизвестная версия"
-//         author = "delyee"
-//         date = "28.09.2019"
-//     condition:
-//      DefaultShell or DangerFuncs //and PHPVars
-// }
-
-
-/* 
-private rule other_funcs
+private rule OtherFuncs
 {
     meta:
         description = "funcs for Generic rule"
@@ -71,5 +62,19 @@ private rule other_funcs
         $ = "gzdecode"
     condition:
         any of them
-*/
+}
+
+
+rule Generic: EvilFuncs DangerFuncs PHPVars generic
+ {
+    meta:
+        description = "Неизвестная версия"
+        author = "delyee"
+        date = "1.12.2020"
+    condition:
+        not IsELF and ((IsPHP and EvilFuncs) or (DangerFuncs and Vars and OtherFuncs))
+ }
+ 
+
+
         
