@@ -6,8 +6,7 @@ I hope this will be useful for organizations that provide hosting services and s
 
 This is one-person-project made just4fun im my own time - please don't judge the quality. 
 
-If you have a desire to help - here's my contacts for communication [here](https://delyee.github.io/contact) 
-or do a pull request ([template](https://github.com/delyee/yara_rules/blob/master/template.yar) is in the root of the repository).
+If you have a desire to help - [here's](https://delyee.github.io/contact) my contacts for communication or do a pull request ([template](https://github.com/delyee/yara_rules/blob/master/template.yar) is in the root of the repository).
 
 Perhaps this [nonsense](https://github.com/delyee/Ese-gui) written "on the knee" in the 2 evenings, but greatly simplifying work. 
 If you have over9999 files - ese-gui can be useful for you!
