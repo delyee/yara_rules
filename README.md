@@ -9,7 +9,7 @@ This is one-person-project made just4fun im my own time - please don't judge the
 If you have a desire to help - [here's](https://delyee.github.io/contact) my contacts for communication or do a pull request ([template](https://github.com/delyee/yara_rules/blob/master/template.yar) is in the root of the repository).
 
 Perhaps this [nonsense](https://github.com/delyee/Ese-gui) written "on the knee" in the 2 evenings, but greatly simplifying work. 
-If you have over9999 files - ese-gui can be useful for you!
+If you have over9999 files - this thing can be useful for you.
 
 Except rules that can detect certain php shells, there are Generic rules - they will help you to find potentially malicious scripts quickly and increase the amount of erased backdoors of an attacker.
 
