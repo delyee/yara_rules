@@ -72,7 +72,8 @@ rule Generic: EvilFuncs DangerFuncs PHPVars generic
         author = "delyee"
         date = "1.12.2020"
     condition:
-        not IsELF and ((IsPHP and EvilFuncs) or (DangerFuncs and Vars and OtherFuncs))
+        not IsELF and (IsPHP and EvilFuncs and DangerFuncs)
+        // and Vars and OtherFuncs))
  }
  
 
