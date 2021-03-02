@@ -41,7 +41,7 @@ include "./other/index.yar"
 include "./unknown/index.yar"
 include "./soft/index.yar"
 include "./Miners/index.yar"
-include "./CheckVulnerable/index.yar"
+//include "./CheckVulnerable/index.yar"
 include "./generic/index.yar"
 include "./apts/index.yar"
 
