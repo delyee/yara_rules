@@ -7,7 +7,6 @@ rule UFRstealer: soft cnc
     strings:
         $ = "$cookiez = @$_COOKIE['pwd'];"
         $ = "$logout = $_GET['logout'];"
-        $ = "#ufr_block"
         $ = "@unlink($dirname.'/'.$_GET['delete']);"
         $ = "if ($b == $pw)"
     condition:

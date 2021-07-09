@@ -6,7 +6,8 @@ rule htaccess: generic ioc
         author = "delyee"
         date = "26.03.2020"
     strings:
+    	$ = "AddHandler application/x-httpd-php"
         $ = "AddType application/x-httpd-php"
     condition:
-        all of them
+        any of them
 }
