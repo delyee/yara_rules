@@ -5,8 +5,6 @@ levifuksz_shells [phpshell] ./shellp.php
 levifuksz_shells [phpshell] ./shell.php
 */
 
-include "../is/index.yar"
-
 rule levifuksz_shells: phpshell
 {
     meta:

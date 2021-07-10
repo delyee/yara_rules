@@ -1,4 +1,3 @@
-include "../is/index.yar"
 
 rule contra_tinyshell: phpshell
 {

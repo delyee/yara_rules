@@ -1,4 +1,3 @@
-include "../is/index.yar"
 
 rule extract_backdoor: generic ioc
 {
