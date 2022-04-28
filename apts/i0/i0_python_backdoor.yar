@@ -5,7 +5,7 @@ filename: dk.py
 */
 
 
-rule i0_python_backdoor: python backdoor phpshell i0
+rule i0_python_backdoor: python backdoor phpshell i0 apts
 {
   meta:
       description = "i0 python backdoor"

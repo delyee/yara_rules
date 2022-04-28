@@ -1,4 +1,4 @@
-rule unknown1_functions: apts php
+rule unknown1_functions: apts phpshell
 {
     meta:
         description = "functions.php"

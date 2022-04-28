@@ -1,4 +1,4 @@
-rule i0_php_backdoor: phpshell i0
+rule i0_php_backdoor: phpshell i0 apts
 {
   meta:
       description = "i0 php backdoor"
