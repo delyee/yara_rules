@@ -10,5 +10,5 @@ rule array_filter: apts neapolitan backdoor
         $p2 = "HTTP_I"
         $p3 = "HTTP_NX1"
     condition:
-        $array_filter and any of (p*)
+        $array_filter and any of ($p*)
 }
