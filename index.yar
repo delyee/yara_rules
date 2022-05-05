@@ -44,5 +44,6 @@ include "./Miners/index.yar"
 //include "./CheckVulnerable/index.yar"
 include "./generic/index.yar"
 include "./apts/index.yar"
+include "./ioc/index.yar"
 //include "./Phishing/index.yar"
 
