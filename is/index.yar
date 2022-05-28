@@ -9,7 +9,7 @@ private rule IsELF
 private rule IsPHP
  {
      strings:
-         $ = "<?" nocase fullword
+         $ = "<?" nocase
      condition:
          all of them
  }
