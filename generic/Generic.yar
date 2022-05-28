@@ -4,7 +4,6 @@ private rule EvilFuncs
          $ = "base64_decode(" nocase 
          $ = "eval(" nocase 
          $ = { 69 6e 63 6c 75 64 65 20 27 68 74 74 (70 | 70 73) 3a 2f 2f }
-         $ = "php://input"
          $ = "exec(" nocase         // https://www.php.net/manual/ru/function.exec
          $ = "system(" nocase       // https://www.php.net/manual/ru/function.system.php
          $ = "passthru(" nocase     // https://www.php.net/manual/ru/function.passthru.php
