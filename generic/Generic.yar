@@ -72,6 +72,7 @@ private rule DangerFuncs: generic
         $ = "create_function(" nocase fullword      // https://www.php.net/manual/ru/function.create-function.php
         $ = "function_exists(" nocase fullword      // https://www.php.net/manual/ru/function.function-exists.php
 
+        $ = "rawurldecode(" nocase fullword
      condition:
          //not IsELF and 
          //(IsPHP and EvilFuncs) or (any of them and Vars)
